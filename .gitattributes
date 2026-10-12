@@ -1,0 +1,15 @@
+# ── 行尾保护 ───────────────────────────────────────────────
+# 说明：本技能面向 Windows，且 自检.bat 必须是 GBK + CRLF + 无 BOM，
+#      否则 cmd.exe 会「逐行吃字符」（详见 references/07-踩坑总表.md）。
+# 若不做显式声明，非 Windows 机器 clone 后 .bat 会变成裸 LF，直接坏掉。
+* text=auto
+
+*.bat   text eol=crlf
+*.cmd   text eol=crlf
+*.ps1   text eol=crlf
+
+# ── 二进制（禁止 git 做任何转换）─────────────────────────────
+*.png   binary
+*.jpg   binary
+*.zip   binary
+*.enbx  binary

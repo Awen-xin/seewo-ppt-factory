@@ -1,0 +1,31 @@
+{
+  "_note": "分组方案示例（enbx_group.py）。把「一次点击要同时出现」的多个元素打包成 <Group>，只给 Group 挂一条动画。\nindex 是「分组前」按客户端元素顺序的下标，务必用 enbx_dump.py 在干净源上逐页核对后再填。",
+  "_rules": [
+    "同页多元素要一次点击同时动 → 唯一正解是 <Group>（写相同 Number 会被客户端重编号而失效）",
+    "一个元素只能保留一条动画；给 Group 内子元素挂动画无效",
+    "提问面板若要「Shape 先进入 + Text 后强调」→ 该页不要分组，改用 anim.json 拆元素（见 anim.example.json）",
+    "工具页（table / mindmap）与活动页（match）不参与分组"
+  ],
+  "pages": [
+    {
+      "_page": "P1 封面：标题先呈现，点击后揭示主图+图注",
+      "page": 1,
+      "groups": [
+        { "indexes": [6, 7, 8], "name": "P1-主图", "anim": "RippleInEffect", "category": "Appearance", "number": 1 }
+      ]
+    },
+    {
+      "_page": "P2 导入三问：每组「圆点+文字」打包，逐条出现",
+      "page": 2,
+      "groups": [
+        { "indexes": [5, 6], "name": "P2-其一", "anim": "ScaleIn", "category": "Appearance", "number": 1 },
+        { "indexes": [7, 8], "name": "P2-其二", "anim": "JumpIn", "category": "Appearance", "number": 2 }
+      ]
+    },
+    {
+      "_page": "P3 提问框：本页**不分组**（Shape/Text 各一条动画，见 anim.example.json）",
+      "page": 3,
+      "groups": []
+    }
+  ]
+}

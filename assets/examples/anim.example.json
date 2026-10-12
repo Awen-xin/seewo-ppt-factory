@@ -1,0 +1,28 @@
+{
+  "_note": "动效编排示例（enbx_anim.py）。定位用 index（分组后用 enbx_dump.py 核对），不要用 match —— Group 优先规则下 match 会命中整组。",
+  "_constraints": [
+    "一个元素只能保留一条动画（同元素两处 <Animations> / 同块两条 <Animation> 会被静默丢弃）",
+    "「先进入再强调」必须拆成两个元素：Shape→Appearance、Text→Emphasis",
+    "只用 Appearance / Emphasis + Trigger=Click",
+    "强调强度只能 Medium 或缺省（Large 会让整份课件加载失败）",
+    "禁用：Path（会被改写）、WithPrevious（整份课件加载失败）、音效（静默丢弃）"
+  ],
+  "pages": [
+    {
+      "_page": "P3 讲完后：点1 弹出追问面板，点2 闪烁追问文字，把注意力收拢到问题",
+      "page": 3,
+      "targets": [
+        { "index": 11, "number": 1, "anim": "RippleInEffect", "category": "Appearance", "with_marker": false },
+        { "index": 12, "number": 2, "anim": "Flicker", "category": "Emphasis", "with_marker": false }
+      ]
+    },
+    {
+      "_page": "P7 归纳完后：点1 弹出面板，点2 心跳强调（激发认知冲突）",
+      "page": 7,
+      "targets": [
+        { "index": 11, "number": 1, "anim": "RippleInEffect", "category": "Appearance", "with_marker": false },
+        { "index": 12, "number": 2, "anim": "Heartbeat", "category": "Emphasis", "with_marker": false }
+      ]
+    }
+  ]
+}

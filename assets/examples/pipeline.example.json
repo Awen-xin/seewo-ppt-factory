@@ -1,0 +1,16 @@
+{
+  "_note": "一条流水线（seewo_build.py）的输入示例。相对路径以「现役工作目录」SEEWO_HOME（默认 = 运行时所在目录）为基准；也可写绝对路径。",
+  "_usage": "python scripts/seewo_build.py pipeline.json --publish",
+  "src": "第X课-课题/第X课 课题.enbx",
+  "out": "第X课-课题/第X课 课题-含视频.enbx",
+  "name": "第X课 课题-含视频",
+  "video": {
+    "path": "课件/单元/视频/u2-lXX.mp4",
+    "page": "last",
+    "title": "看一看：……",
+    "sub": "观察……，想一想……。"
+  },
+  "group": "第X课-课题/v2/group.json",
+  "anim": "第X课-课题/v2/anim.json",
+  "publish": { "cleanup": true }
+}
