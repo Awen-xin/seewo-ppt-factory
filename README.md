@@ -35,6 +35,18 @@ C:\Users\<你的用户名>\.workbuddy\skills\seewo-courseware-factory\
 ```
 
 放好即被 WorkBuddy 自动识别（技能名 `seewo-courseware-factory`）。
+
+**从 GitHub 装（推荐，以后一条 `git pull` 就能更新）**：
+
+```bash
+cd "%USERPROFILE%\.workbuddy\skills"
+git clone https://github.com/Awen-xin/seewo-ppt-factory.git seewo-courseware-factory
+```
+
+> 注意最后那个 `seewo-courseware-factory` 是**目标目录名**：仓库本身叫 `seewo-ppt-factory`，
+> 但技能注册名取自 `SKILL.md` 里的 `name:`，目录名保持一致最省心。
+> 之后更新只要 `cd "%USERPROFILE%\.workbuddy\skills\seewo-courseware-factory" && git pull`。
+
 若你是从本机导出的，原作者可用一条命令安装：
 
 ```bash
